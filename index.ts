@@ -23,7 +23,7 @@ app.set('view engine', '.hbs');
 
 //Routers
 app.use('/', homeRouter);
-app.use('warrior', warriorRouter);
+app.use('/warrior', warriorRouter);
 
 
 
