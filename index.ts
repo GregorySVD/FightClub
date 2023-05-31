@@ -5,6 +5,7 @@ import {static as eStatic, urlencoded} from "express"; //static is reserved so w
 import {engine} from "express-handlebars";
 import {homeRouter} from "./routers/home";
 import {warriorRouter} from "./routers/warrior";
+import {arenaRouter} from "./routers/arena";
 
 
 const app = express();
@@ -24,6 +25,8 @@ app.set('view engine', '.hbs');
 //Routers
 app.use('/', homeRouter);
 app.use('/warrior', warriorRouter);
+app.use('/arena', arenaRouter);
+
 
 
 
