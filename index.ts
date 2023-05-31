@@ -3,6 +3,7 @@ import 'express-async-errors';
 import * as methodOverride from "method-override";
 import {static as eStatic, urlencoded} from "express"; //static is reserved so we need to use static as eStatic
 import {engine} from "express-handlebars";
+import {homeRouter} from "./routers/home";
 
 
 const app = express();
@@ -18,9 +19,11 @@ app.engine('.hbs', engine({ //view engine
 }));
 
 app.set('view engine', '.hbs');
-app.get('/', (req, res) => {
-    res.send('Hello World');
-});
+
+//Routers
+app.use('/', homeRouter);
+
+
 
 // app.use(handleError):
 
