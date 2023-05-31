@@ -1,1 +1,29 @@
-console.log("Hello world!");
+import * as express from "express";
+import 'express-async-errors';
+import * as methodOverride from "method-override";
+import {static as eStatic, urlencoded} from "express"; //static is reserved so we need to use static as eStatic
+import {engine} from "express-handlebars";
+
+
+const app = express();
+
+app.use(methodOverride('_method')) //if we use _method we can override methods for REST api
+app.use(urlencoded({ //our project will use forms for example to create a warrior
+    extended: true,
+}));
+app.use(eStatic('public'));
+app.engine('.hbs', engine({ //view engine
+    extname: '.hbs',
+    // helpers:
+}));
+
+app.set('view engine', '.hbs');
+app.get('/', (req, res) => {
+    res.send('Hello World');
+});
+
+// app.use(handleError):
+
+app.listen(3000, 'localhost', () => {
+    console.log('listening on http://localhost:3000');
+})
