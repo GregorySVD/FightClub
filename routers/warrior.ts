@@ -4,8 +4,8 @@ export const warriorRouter = Router();
 
 warriorRouter
     .get('/add-form', (req, res) => {
-        res.render('./warrior/add-form.hbs')
+        res.render('warrior/add-form.hbs')
     })
-    .post('/add-form', (req, res) => {
-        res.send('Adding warrior ....')
+    .post('/', (req, res) => {
+        res.render('warrior/warrior-added')
     });
