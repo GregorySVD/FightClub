@@ -1,4 +1,5 @@
 import {ValidationError} from "../utils/error";
+import {pool} from "../utils/db";
 
 export class WarriorRecord {
     public id?: string;
@@ -29,7 +30,8 @@ export class WarriorRecord {
         this.stamina = stamina
         this.wins = wins;
     }
-    async insert() {
+    async insert(): Promise<WarriorRecord> {
+        await pool.execute("INSERT INTO ")
 
     }
     async update() {
