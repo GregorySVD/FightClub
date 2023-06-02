@@ -55,9 +55,14 @@ export class WarriorRecord {
 
     //}
 
-    static async getOne(id: string) { //static = scan whole database
-
+    static async getOne(id: string): Promise<WarriorRecord | null> { //static = scan whole database
+    const [result] = await pool.execute("SELECT * FROM `warriors` WHERE `id` =:id", {
+        id,
+    }) as WarriorRecordResult;
+    return result.length=== 0 ? null : new WarriorRecord(result[0]); // validation
     }
+
+
     static async listAll(): Promise<WarriorRecord[]> {
     const [results] = (await pool.execute("SELECT * FROM `warriors`")) as WarriorRecordResult;
     return results.map(obj => new WarriorRecord(obj));
