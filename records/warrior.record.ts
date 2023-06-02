@@ -1,6 +1,7 @@
 import {ValidationError} from "../utils/error";
 import {pool} from "../utils/db";
 import {FieldPacket} from "mysql2";
+import {v4 as uuid} from "uuid";
 
 type WarriorRecordResult = [WarriorRecord[], FieldPacket[]]
 
@@ -25,21 +26,34 @@ export class WarriorRecord {
             throw new ValidationError(`Name of fighter needs to be at least 3 characters and not longer than 50 characters. Your fighter name is ${name.length} characters long.`)
         }
 
-        this.id = id;
-        this.name = name;
-        this.power = power;
-        this.agility = agility;
-        this.defence = defence;
-        this.stamina = stamina
-        this.wins = wins;
+        this.id = obj.id;
+        this.name = obj.name;
+        this.power = obj.power;
+        this.defence = obj.defence;
+        this.stamina = obj.stamina
+        this.agility = obj.agility;
+        this.wins = obj.wins;
     }
-    // async insert(): Promise<WarriorRecord> {
-    //     await pool.execute("INSERT INTO ")
-    //
-    // }
-    async update() {
 
+    async insert(): Promise<string|number> {
+        if(!this.id) {
+            this.id = uuid();
+        }
+        await pool.execute("INSERT INTO `warriors` (`id`, `name`, `power`, `agility`, `defence`,`stamina`, `wins`" +
+            " )VALUES(:id,:name,:power,:agility, :defence, :stamina, :wins)", {
+            id: this.id,
+            name: this.name,
+            power: this.power,
+            agility: this.agility,
+            defence: this.defence,
+            stamina: this.stamina,
+            wins: this.wins,
+        })
+        return this.id;
     }
+    //async update() {
+
+    //}
 
     static async getOne(id: string) { //static = scan whole database
 
