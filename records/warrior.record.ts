@@ -1,5 +1,8 @@
 import {ValidationError} from "../utils/error";
 import {pool} from "../utils/db";
+import {FieldPacket} from "mysql2";
+
+type WarriorRecordResult = [WarriorRecord[], FieldPacket[]]
 
 export class WarriorRecord {
     public id?: string;
@@ -30,10 +33,10 @@ export class WarriorRecord {
         this.stamina = stamina
         this.wins = wins;
     }
-    async insert(): Promise<WarriorRecord> {
-        await pool.execute("INSERT INTO ")
-
-    }
+    // async insert(): Promise<WarriorRecord> {
+    //     await pool.execute("INSERT INTO ")
+    //
+    // }
     async update() {
 
     }
@@ -41,8 +44,9 @@ export class WarriorRecord {
     static async getOne(id: string) { //static = scan whole database
 
     }
-    static async listAll() {
-
+    static async listAll(): Promise<WarriorRecord[]> {
+    const [results] = (await pool.execute("SELECT * FROM `warriors`")) as WarriorRecordResult;
+    return results.map(obj => new WarriorRecord(obj));
     }
     static async listTop(topCount: number) {
 
