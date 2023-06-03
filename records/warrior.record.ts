@@ -35,7 +35,7 @@ export class WarriorRecord {
         this.wins = obj.wins;
     }
 
-    async insert(): Promise<string|number> {
+    async insert(): Promise<string> { //return string for id
         if(!this.id) {
             this.id = uuid();
         }
@@ -51,9 +51,9 @@ export class WarriorRecord {
         })
         return this.id;
     }
-    //async update() {
-
-    //}
+    // async update(): Promise<void> {
+    //
+    // }
 
     static async getOne(id: string): Promise<WarriorRecord | null> { //static = scan whole database
     const [result] = await pool.execute("SELECT * FROM `warriors` WHERE `id` =:id", {
@@ -67,7 +67,8 @@ export class WarriorRecord {
     const [results] = (await pool.execute("SELECT * FROM `warriors`")) as WarriorRecordResult;
     return results.map(obj => new WarriorRecord(obj));
     }
-    static async listTop(topCount: number) {
 
+    static async listTop(topCount: number| string): Promise<WarriorRecord[]> {
+    const results = await pool.execute("SELECT * FROM `warriors` ORDER BY `wins` ASC");
     }
 }
