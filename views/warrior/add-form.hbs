@@ -1,2 +1,24 @@
 <h2>Warrior Add-form</h2>
-<form action=""></form>
+<form class='warrior-add-form' action="/warrior" method="POST">
+    <label>
+        Name: <br/>
+        <input type="text" name="name" minlength="3" maxlength="50"/><br/>
+    </label>
+    <label>
+        Power: <br/>
+        <input type="number" name="power" value="1" min="1" max="10"/><br/>
+    </label>
+    <label>
+        Agility: <br/>
+        <input type="number" name="agility" value="1" min="1" max="10"/><br/>
+    </label>
+    <label>
+        Defence: <br/>
+        <input type="number" name="defence" value="1" min="1" max="10"/><br/>
+    </label>
+    <label>
+        Stamina: <br/>
+        <input type="number" name="stamina" value="1" min="1" max="10"/><br/>
+    </label>
+    <button class="add-warrior-button" type="submit">Add Warrior to Fight Club</button>
+</form>

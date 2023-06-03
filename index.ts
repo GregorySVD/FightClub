@@ -7,8 +7,7 @@ import {homeRouter} from "./routers/home";
 import {warriorRouter} from "./routers/warrior";
 import {arenaRouter} from "./routers/arena";
 import {hallOfFameRouter} from "./routers/hall-of-fame";
-import './utils/db';
-import {WarriorRecord} from "./records/warrior.record"; //for instance connect to database;
+import './utils/db';//for instance connect to database;
 
 const app = express();
 
@@ -30,15 +29,6 @@ app.use('/warrior', warriorRouter);
 app.use('/arena', arenaRouter);
 app.use('/hall-of-fame', hallOfFameRouter);
 
-const w = new WarriorRecord({
-    name: 'Box',
-    power: 2,
-    defence: 3,
-    stamina: 3,
-    agility: 2,
-});
-
-console.log(w);
 
 // app.use(handleError):
 
