@@ -28,7 +28,16 @@ export class WarriorRecord {
         // specific fields from WarriorRecord to create new WarriorRecord
         const {id, name, agility, stamina, defence, power, wins} = obj;
 
-        const sum = [agility, stamina, defence, power].reduce((prev, curr) => prev + curr, 0);
+        const stats = [agility, stamina, defence, power];
+
+        const sum = stats.reduce((prev, curr) => prev + curr, 0);
+
+        for (const stat of stats) {
+            if (stat < 1) {
+                throw new ValidationError(`Stat must be at least 1. Please set ${stat} at least at 1`)
+            }
+        }
+
         if (sum !== 10) {
             throw new ValidationError(`You must distribute all skill points (sum of skill points= 10 point). 
             You already have distribute ${sum}.`);
