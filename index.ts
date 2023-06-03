@@ -36,9 +36,9 @@ const w = new WarriorRecord({
     defence: 3,
     stamina: 3,
     agility: 2,
-})
+});
 
-console.log(w)
+console.log(w);
 
 // app.use(handleError):
 

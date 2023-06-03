@@ -3,7 +3,7 @@ import {pool} from "../utils/db";
 import {FieldPacket} from "mysql2";
 import {v4 as uuid} from "uuid";
 
-type WarriorRecordResult = [WarriorRecord[], FieldPacket[]]
+type WarriorRecordResult = [WarriorRecord[], FieldPacket[]];
 
 // export interface WarriorEntity {
 //     id?: string;
@@ -24,7 +24,7 @@ export class WarriorRecord {
     public readonly agility: number;
     public wins?: number;
 
-    constructor(obj: Omit<WarriorRecord, 'insert' | 'update' >) { //omit a
+    constructor(obj: Omit<WarriorRecord, 'insert' | 'update'>) { //omit a
         // specific fields from WarriorRecord to create new WarriorRecord
         const {id, name, agility, stamina, defence, power, wins} = obj;
 
@@ -69,26 +69,31 @@ export class WarriorRecord {
         return this.id;
     }
 
-    // async update(): Promise<void> {
-    //
-    // }
+    async update(): Promise<void> {
+        await pool.execute("UPDATE `warriors` SET `wins` = :wins", {
+            wins: this.wins,
+        });
+    }
 
     static async getOne(id: string): Promise<WarriorRecord | null> { //static = scan whole database
-        const [result] = await pool.execute("SELECT * FROM `warriors` WHERE `id` =:id", {
-            id,
+        const [results] = await pool.execute("SELECT * FROM `warriors` WHERE `id` =:id", {
+            id: id,
         }) as WarriorRecordResult;
-        return result.length === 0 ? null : new WarriorRecord(result[0]); // validation
+        return results.length === 0 ? null : new WarriorRecord(results[0]); // validation
     }
 
 
     static async listAll(): Promise<WarriorRecord[]> {
         const [results] = (await pool.execute("SELECT * FROM `warriors`")) as WarriorRecordResult;
-        return results.map(obj => new WarriorRecord(obj));
+        return results.map(obj => new WarriorRecord(obj)); //without this we get pure table, so it is necessary to
+        // map results to return WarriorRecord
     }
 
     static async listTop(topCount: number): Promise<WarriorRecord[]> {
-        const results = await pool.execute("SELECT * FROM `warriors` ORDER BY `wins` ASC");
-        return [];
+        const [results] = await pool.execute("SELECT * FROM `warriors` ORDER BY `wins` DESC LIMIT :topCount", {
+            topCount,
+        }) as WarriorRecordResult;
+        return results.map(obj => new WarriorRecord(obj));
     }
 
 }
