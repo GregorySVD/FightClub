@@ -24,9 +24,8 @@ export class WarriorRecord {
     public readonly agility: number;
     public wins?: number;
 
-    constructor(obj: Pick<WarriorRecord, 'id' | 'name' | 'power' | 'defence' | 'agility' | 'stamina' >) { //choose a
+    constructor(obj: Omit<WarriorRecord, 'insert' | 'update' >) { //omit a
         // specific fields from WarriorRecord to create new WarriorRecord
-        //or (obj: Omit<WarriorRecord, 'insert' | 'update'>) by omitting this method
         const {id, name, agility, stamina, defence, power, wins} = obj;
 
         const sum = [agility, stamina, defence, power].reduce((prev, curr) => prev + curr, 0);
@@ -38,24 +37,18 @@ export class WarriorRecord {
             throw new ValidationError(`Name of fighter needs to be at least 3 characters and not longer than 50 characters. Your fighter name is ${name.length} characters long.`)
         }
 
-        this.id = obj.id;
-        this.name = obj.name;
-        this.power = obj.power;
-        this.defence = obj.defence;
-        this.stamina = obj.stamina
-        this.agility = obj.agility;
-        this.wins = obj.wins;
+        this.id = id ?? uuid(); //validation by nullish operator
+        this.wins = wins ?? 0;
+        this.name = name;
+        this.power = power;
+        this.defence = defence;
+        this.stamina = stamina
+        this.agility = agility;
     }
 
     async insert(): Promise<string> { //return string for id
-        if (!this.id) {
-            this.id = uuid();
-        }
-        if (typeof this.wins !== 'number') {
-            this.wins = 0; //validation of wins
-        }
-        await pool.execute("INSERT INTO `warriors` (`id`, `name`, `power`, `agility`, `defence`,`stamina`, `wins`" +
-            " )VALUES(:id,:name,:power,:agility, :defence, :stamina, :wins)", {
+
+        await pool.execute("INSERT INTO `warriors` (`id`, `name`, `power`, `agility`, `defence`,`stamina`, `wins`)VALUES(:id,:name,:power,:agility, :defence, :stamina, :wins)", {
             id: this.id,
             name: this.name,
             power: this.power,
@@ -84,7 +77,9 @@ export class WarriorRecord {
         return results.map(obj => new WarriorRecord(obj));
     }
 
-    static async listTop(topCount: number | string): Promise<WarriorRecord[]> {
+    static async listTop(topCount: number): Promise<WarriorRecord[]> {
         const results = await pool.execute("SELECT * FROM `warriors` ORDER BY `wins` ASC");
+        return [];
     }
+
 }
