@@ -1,24 +1,21 @@
 <h1>WELCOME TO HALL OF FAME</h1>
 <h2>This is our best fighters</h2>
 <table class="hall-of-fame-table-ranking">
+
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Wins</th>
+        </tr>
+        </thead>
     {{#each hallOfFameList}}
-    <tr >
-        <th>ID</th>
-        <th>Name</th>
-        <th>Power</th>
-        <th>Defence</th>
-        <th>Stamina</th>
-        <th>Agility</th>
-        <th>Wins</th>
-    </tr>
-    <tr>
-        <td>{{this.id}}</td>
-        <td>{{this.name}}</td>
-        <td>{{this.power}}</td>
-        <td>{{this.defence}}</td>
-        <td>{{this.stamina}}</td>
-        <td>{{this.agility}}</td>
-        <td>{{this.wins}}</td>
-    </tr>
+        <tbody>
+        <tr>
+            <td>{{this.place}}</td>
+            <td>{{this.warrior.name}}</td>
+            <td>{{this.warrior.wins}}</td>
+        </tr>
+        </tbody>
     {{/each}}
 </table>
