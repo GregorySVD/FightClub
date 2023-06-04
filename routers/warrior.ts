@@ -10,19 +10,23 @@ warriorRouter
         res.render('warrior/add-form.hbs');
     })
     .post('/',  async (req, res) => {
+        const {agility, power, defence, stamina, name} = req.body;
 
-        if(await WarriorRecord.isNameTaken(req.body.name)) {
-            throw new ValidationError(`Name ${req.body.name} is already taken, choose another name`);
+        if(await WarriorRecord.isNameTaken(name)) {
+            throw new ValidationError(`Name ${name} is already taken, choose another name`);
         }
         //req.body returns string, so it is necessary to convert stats to Number
         const warrior = new WarriorRecord({
             ...req.body,
-            power: Number(req.body.power),
-            defence: Number(req.body.defence),
-            stamina: Number(req.body.stamina),
-            agility: Number(req.body.agility),
-            name: req.body.name,
+            power: Number(power),
+            defence: Number(defence),
+            stamina: Number(stamina),
+            agility: Number(agility),
+            name: name,
         });
         await warrior.insert();
-        res.render('warrior/warrior-added.hbs');
+        res.render('warrior/warrior-added.hbs', {
+            id: warrior.id,
+            name: warrior.name,
+        });
     });
