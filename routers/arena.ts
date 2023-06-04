@@ -1,6 +1,7 @@
 import { Router } from "express"
 import {WarriorRecord} from "../records/warrior.record";
 import {ValidationError} from "../utils/error";
+import {fight} from "../utils/fight";
 
 export const arenaRouter = Router();
 
@@ -19,11 +20,20 @@ arenaRouter
 
         const warrior1 = await WarriorRecord.getOne(warrior1Id);
         const warrior2 = await WarriorRecord.getOne(warrior2Id);
-        res.render('./arena/fight');
+
         if(!warrior1) {
             throw new ValidationError('First warrior  not found.')
         }
         if(!warrior2) {
             throw new ValidationError('Second warrior not found.')
         }
+
+        const {log, winner} = fight(warrior1, warrior2);
+
+        winner.wins++;
+        await winner.update();
+
+        res.render('./arena/fight', {
+            log,
+        });
     }) //POST/ arena/ fight
