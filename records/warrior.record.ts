@@ -39,7 +39,7 @@ export class WarriorRecord {
         }
 
         if (sum !== 10) {
-            throw new ValidationError(`You must distribute all skill points (sum of skill points= 10 point). 
+            throw new ValidationError(`You must distribute all skill points (sum of skill points must be 10). 
             You already have distribute ${sum}.`);
         }
         if (name.length < 3 && name.length > 50) {

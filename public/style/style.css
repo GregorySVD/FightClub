@@ -7,7 +7,7 @@
 
 hr {
     border: none;
-    height: 1px;
+    height: 3px;
     background: linear-gradient(to right, #9340ff, #ff66c4);
 }
 .navigation-bar {

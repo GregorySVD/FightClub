@@ -1,0 +1,16 @@
+.error {
+    display: flex;
+    border: 2px solid red;
+    border-radius: 30px;
+    flex-direction: column;
+    background-color: #efebeb;
+}
+.img-error-icon {
+    margin-top: 3px;
+    width: 16px;
+    height: 16px;
+}
+.error-header {
+    justify-content: center;
+    color: red;
+}
