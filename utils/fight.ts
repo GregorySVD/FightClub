@@ -25,14 +25,20 @@ export const fight = (warrior1: WarriorRecord, warrior2: WarriorRecord): {  //fa
     do {
         const attackStrength = attacker.warrior.power;
 
+        log.push(`${attacker.warrior.name} will attack ${defender.warrior.name} with strength of ${attackStrength}`);
+
         if(defender.dp + defender.warrior.agility> attackStrength) {
+            log.push(`${defender.warrior.name} reflected damage from ${attacker.warrior.name}`)
             defender.dp -= attackStrength;
 
             if(defender.dp < 0) {
+                log.push(`${attacker.warrior.name} broke defense of ${defender.warrior.name} and deals ${defender.dp} points of damage`)
                 defender.hp += defender.dp;
             }
         } else {
             defender.hp -= attackStrength;
+            log.push(`${attacker.warrior.name} deals ${defender.dp} points of damage to ${defender.warrior.name}` )
+            defender.hp += defender.dp;
         }
 
         [defender, attacker] = [attacker, defender]; //swap of roles if fight
@@ -42,7 +48,7 @@ export const fight = (warrior1: WarriorRecord, warrior2: WarriorRecord): {  //fa
 
 
     const winner = defender.warrior;
-
+    log.push(`${winner.name} is a winner!`);
     return {
         log,
         winner,
