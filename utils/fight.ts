@@ -31,6 +31,8 @@ export const fight = (warrior1: WarriorRecord, warrior2: WarriorRecord): {  //fa
             if(defender.dp < 0) {
                 defender.hp += defender.dp;
             }
+        } else {
+            defender.hp -= attackStrength;
         }
 
         [defender, attacker] = [attacker, defender]; //swap of roles if fight
