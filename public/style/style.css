@@ -1,4 +1,8 @@
-* {
+*{
+    margin:0px;
+}
+body {
+    height: 100%;
     background: black;
     color: #ff66c4;
     text-align: center;
@@ -87,4 +91,14 @@ hr {
 }
 .add-warrior-button:active {
     background-color: #3e8e41;
+}
+footer .footer-follow{
+    margin-top: 20px;
+    padding: 10px;
+    background: linear-gradient(to right, #9340ff, #ff66c4);
+    color: #fff;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
 }
