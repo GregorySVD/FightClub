@@ -1,24 +1,33 @@
 .hall-of-fame-table-ranking {
-    margin: 0 auto;
-    border-collapse: collapse;
-    width: 50%;
+    margin: 10px auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 80%;
+    background-color: #1f1f1f; /* Change to a dark background color */
+    color: #ff66c4; /* Set the text color to white */
 }
 
 .hall-of-fame-table-ranking th,
 .hall-of-fame-table-ranking td {
-    padding: 8px;
+    padding: 12px;
     text-align: center;
-    border: 1px solid #9340ff;
+    border: 2px solid #9340ff;
+    color: #ff66c4; /* Set the text color to white */
 }
 
 .hall-of-fame-table-ranking th {
-    background-color: #1f1818;
-    color: #ff66c4;
+    background-color: #1f1818; /* Adjust the background color for the header */
     font-weight: bold;
 }
 
-
-
 .hall-of-fame-table-ranking td:first-child {
     font-weight: bold;
+}
+
+.hall-of-fame-table-ranking tr:nth-child(even) {
+    background-color: #2f2f2f; /* Adjust the background color for alternating rows */
+}
+
+.hall-of-fame-table-ranking tr:hover {
+    background-color: #363636; /* Adjust the background color for hover effect */
 }
