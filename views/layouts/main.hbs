@@ -14,11 +14,15 @@
     <link rel="stylesheet" href="/style/error.css"/>
     <link rel="stylesheet" href="/style/table.css"/>
     <link rel="stylesheet" href="/style/footer.css"/>
+    <link rel="stylesheet" href="/style/header.css"/>
 </head>
 
 <body>
 <header>
-    <img src="../img/logo.png" alt="logo">
+    <div class="header-logo">
+        <img src="../img/logo.svg" alt="logo">
+        <h1>Welcome to the Epic Battle Arena!</h1>
+    </div>
     <div class="navigation-bar">
         <nav class="navigation-bar-buttons">
             <ul class="navigation-bar-ul">
@@ -28,55 +32,56 @@
             </ul>
         </nav>
     </div>
+
 </header>
 <hr>
 <div id="page-container">
     <div id="content-wrap">
-{{{body}}}
+        {{{body}}}
     </div>
-<footer>
-    <!-- Footer main -->
-    <section class="ft-main">
-        <div class="ft-main-item">
-            <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Games</a></li>
+    <footer>
+        <!-- Footer main -->
+        <section class="ft-main">
+            <div class="ft-main-item">
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Games</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Footer social -->
+        <section class="ft-social">
+            <ul class="ft-social-list">
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-github"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
             </ul>
+        </section>
+        <div class="ft-separation-line">
+            <hr>
         </div>
-    </section>
-
-    <!-- Footer social -->
-    <section class="ft-social">
-        <ul class="ft-social-list">
-            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-            <li><a href="#"><i class="fab fa-github"></i></a></li>
-            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-        </ul>
-    </section>
-    <div class="ft-separation-line">
-        <hr>
-    </div>
 
 
-    <!-- Footer legal -->
-    <section class="ft-legal" style="display: flex;">
-        <div class="ft-legal-logo">
-            <img src="../img/logo.svg" alt="logo">
-        </div>
-        <div class="ft-legal-content">
-            <ul class="ft-legal-list">
-                <li><a href="#">Terms &amp; Conditions</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li>&copy; 2023 designed by GTerenda and MegaK.</li>
-            </ul>
-        </div>
-    </section>
-</footer>
+        <!-- Footer legal -->
+        <section class="ft-legal" style="display: flex;">
+            <div class="ft-legal-logo">
+                <img src="../img/logo.svg" alt="logo">
+            </div>
+            <div class="ft-legal-content">
+                <ul class="ft-legal-list">
+                    <li><a href="#">Terms &amp; Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li>&copy; 2023 designed by GTerenda and MegaK.</li>
+                </ul>
+            </div>
+        </section>
+    </footer>
 </div>
 </body>
 </html>

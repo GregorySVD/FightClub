@@ -26,44 +26,7 @@ input:focus {
     background: linear-gradient(to right, #9340ff, #ff66c4);
 }
 
-.navigation-bar {
-    background-color: #333;
-    height: 65px;
-}
 
-.navigation-bar-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-.navigation-bar-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-.navigation-bar-ul li {
-    margin-right: 10px;
-}
-
-.navigation-bar-ul li a {
-    color: #9340ff;
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 4px;
-    transition: background-color 0.8s;
-}
-
-.navigation-bar-ul li a:hover {
-    background-color: #555;
-}
-
-.navigation-bar-ul li a:active {
-    background-color: #777;
-}
 
 .warrior-add-form {
     max-width: 400px;
