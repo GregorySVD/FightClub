@@ -7,8 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fight Club</title>
     <link rel="stylesheet" href="/style/style.css"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=latin-ext"/>
     <link rel="stylesheet" href="/style/error.css"/>
     <link rel="stylesheet" href="/style/table.css"/>
     <link rel="stylesheet" href="/style/footer.css"/>
@@ -16,57 +18,65 @@
 
 <body>
 <header>
-<img src="../img/logo.png" alt="logo">
-<div class="navigation-bar">
-<nav class="navigation-bar-buttons">
-<ul  class="navigation-bar-ul">
-    <li><a href="/arena/fight-form">Arena</a></li>
-    <li><a href="/warrior/add-form">Warriors</a></li>
-    <li><a href="/hall-of-fame/">Hall of Fame</a></li>
-</ul>
-</nav>
-</div>
+    <img src="../img/logo.png" alt="logo">
+    <div class="navigation-bar">
+        <nav class="navigation-bar-buttons">
+            <ul class="navigation-bar-ul">
+                <li><a href="/arena/fight-form">Arena</a></li>
+                <li><a href="/warrior/add-form">Warriors</a></li>
+                <li><a href="/hall-of-fame/">Hall of Fame</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 <hr>
+<div id="page-container">
+    <div id="content-wrap">
 {{{body}}}
-
-    <footer>
-        <hr>
-        <!-- Footer main -->
-        <section class="ft-main">
-            <div class="ft-main-item">
-                <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Games</a></li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Footer social -->
-        <section class="ft-social">
-            <ul class="ft-social-list">
-                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fab fa-github"></i></a></li>
-                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+    </div>
+<footer>
+    <!-- Footer main -->
+    <section class="ft-main">
+        <div class="ft-main-item">
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Games</a></li>
             </ul>
-        </section>
+        </div>
+    </section>
 
-        <!-- Footer legal -->
-        <section class="ft-legal">
-            <div class="ft-legal-logo">
+    <!-- Footer social -->
+    <section class="ft-social">
+        <ul class="ft-social-list">
+            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fab fa-github"></i></a></li>
+            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+        </ul>
+    </section>
+    <div class="ft-separation-line">
+        <hr>
+    </div>
+
+
+    <!-- Footer legal -->
+    <section class="ft-legal" style="display: flex;">
+        <div class="ft-legal-logo">
             <img src="../img/logo.svg" alt="logo">
-            </div>
+        </div>
+        <div class="ft-legal-content">
             <ul class="ft-legal-list">
                 <li><a href="#">Terms &amp; Conditions</a></li>
                 <li><a href="#">Privacy Policy</a></li>
                 <li>&copy; 2023 designed by GTerenda and MegaK.</li>
             </ul>
-        </section>
+        </div>
+    </section>
 </footer>
+</div>
 </body>
 </html>
