@@ -10,8 +10,12 @@ header {
     display: flex;
     border: 1px solid #3e8e41;
 }
-.header-logo h1{
-
+.header-logo-title{
+    font-size: 8px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: end;
 }
 
 .navigation-bar {
