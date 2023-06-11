@@ -2,9 +2,6 @@ footer {
     margin-top: 40px;
     font-weight: 400;
     background-color: #181818;
-    flex-shrink: 0;
-    bottom: 0;
-    width: 100%;
 }
 .ft-social {
     display: flex;
@@ -12,17 +9,17 @@ footer {
     justify-content: space-evenly;
     text-align: center;
     background-color: #1e1e1e;
+    gap: 5vh;
 }
 .ft-social-list li {
-    font-size: 24px;
+    font-size: 2vh;
     color: inherit;
-    width: 40px;
-    height: 40px;
+    width: 4vh;
+    height: 4vh;
     line-height: 38px;
     flex: 1 1 auto;
     display: inline-block;
     text-align: center;
-    margin: 8px 8px;
     opacity: 0.75;
 }
 .ft-social-list a {
@@ -32,4 +29,33 @@ footer {
 
 .ft-social a:hover {
     opacity: 0.9;
+}
+.ft-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
+    align-items: center;
+}
+
+.ft-main-item ul{
+    display: flex;
+    flex-direction: row;
+    gap: 3vh;
+    list-style-type: none;
+}
+ft-main-item ul li{
+    justify-content: center;
+    border: 1px solid #3e8e41;
+}
+.ft-main-item li a {
+    text-decoration: none;
+    color: inherit;
+}
+.ft-legal {
+    max-width: 75vh;
+}
+.ft-legal-logo {
+    max-width: 5vh;
+    margin: 1% 0px 0 1% ;
 }
