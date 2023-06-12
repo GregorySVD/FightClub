@@ -2,7 +2,7 @@ footer {
     padding: 15px;
     max-height: 17%;
     font-weight: 400;
-    background-color: #2e2e2e;
+    background-color: #1f1e1e;
     color: #5d5c5c;
     position: absolute;
     bottom: 0;
@@ -14,15 +14,15 @@ footer {
     flex-direction: row;
     justify-content: space-evenly;
     text-align: center;
-    gap: 5vh;
 }
 .ft-social-list li {
-    font-size: 2vh;
+    margin-left: 20px;
+    font-size: 4vh;
     color: inherit;
     width: 4vh;
     height: 4vh;
     line-height: 38px;
-    flex: 1 1 auto;
+    flex: 2 1 auto;
     display: inline-block;
     text-align: center;
     opacity: 0.75;

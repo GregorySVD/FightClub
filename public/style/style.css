@@ -8,8 +8,8 @@
 body {
     font-family: ’Roboto’, sans-serif;
     height: 100%;
-    background: black;
-    color: #ff66c4;
+    background: #2f2c2c;
+    color: #ffffff;
     text-align: center;
 }
 
@@ -19,7 +19,7 @@ body {
 }
 
 #content-wrap {
-    padding-bottom: 20%;    /* Footer height */
+    padding-bottom: 20%;
 }
 
 input:focus {
@@ -72,16 +72,7 @@ input:focus {
     background-color: #3e8e41;
 }
 
-footer .footer-follow {
-    margin-top: 20px;
-    padding: 10px;
-    background: linear-gradient(to right, #9340ff, #ff66c4);
-    color: #fff;
-    left: 0;
-    bottom: 0;
-    width: 100%;
 
-}
 
 .hall-of-fame-text h1 {
     margin: 8px 0 0 0;
