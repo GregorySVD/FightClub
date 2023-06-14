@@ -6,80 +6,79 @@ header {
     background: #1f1e1e;
 }
 
-.header-logo {
-    height: 15vh;
-    display: flex;
-    margin: 3vh 50vh 3vh 0vh;
+.header-logo img{
+    display: block;
+    height: 10vh;
+    margin: 2vh 30vw 2vh 0vh;
 }
-.header-navigation-bar ul{
+
+.header-navigation-bar ul {
     display: flex;
-    flex-direction: row;
     text-align: center;
     list-style: none;
-    align-content: center;
+    align-content: stretch;
     justify-content: center;
 }
 
-.header-navigation-bar ul li a{
-   text-decoration: none;
+.header-navigation-bar ul li a {
+    text-decoration: none;
     color: inherit;
     padding: 4vh;
 }
-.login-container{
+
+.login-container {
     display: flex;
 
 }
+
 .btn-login {
     text-align: center;
     margin-left: 10vh;
     padding: 1vh 5vh 1vh 5vh;
     border-radius: 2vh;
     color: inherit;
-    font-size: 20px;
+    font-size: 2em;
     font-weight: bolder;
-    background: linear-gradient(to top right,#785aa5, #ee4061 );
+    background: linear-gradient(to top right, #785aa5, #ee4061);
     transition: background 5.0s;
 }
+
 .btn-login:hover {
     background: linear-gradient(to top right, #674aa4, #dd3050);
 }
 
 .navigation-bar {
     background-color: #464141;
-    width: 50%;
+    width: 50vw;
     display: flex;
-    padding: 2vh 30vh 2vh 30vh;
+    padding: 1vh 30vw 1vh 30vw;
     margin: 3% 25% 3% 25%;
     justify-content: center;
     align-items: center;
     text-align: center;
-
+    box-shadow: 0 1vh 1vh 0vh #dd3050;
 }
 
-.navigation-bar-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
 
 .navigation-bar-ul {
     justify-content: flex-start;
-    align-items: center;
+    align-items: stretch;
     list-style-type: none;
     display: flex;
+    flex: 1 1 auto;
+    gap: 10vh;
 }
 
 .navigation-bar-ul li {
-    margin-right: 10px;
     display: flex;
+
 }
 
 .navigation-bar-ul li a {
     text-align: center;
     text-decoration: none;
     height: 100%;
-    padding: 10% 10vh 10% 10vh;
+    padding: 2em 2em 2em 2em;
     border-radius: 10px;
     transition: background-color 0.8s;
     color: white;

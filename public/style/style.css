@@ -6,6 +6,7 @@
 }
 
 body {
+    min-width: 992px;
     font-family: ’Roboto’, sans-serif;
     height: 100%;
     background: #2f2c2c;
@@ -19,7 +20,7 @@ body {
 }
 
 #content-wrap {
-    padding-bottom: 20%;
+    padding-bottom: 20vh
 }
 
 input:focus {
