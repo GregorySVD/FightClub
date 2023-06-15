@@ -10,26 +10,33 @@ const emailValidation = (email: string): string => {
     return email
 }
 
-console.log(emailValidation('grzegrz@gmail.com'));
+
+export class UserRecord {
+    public id?: string;
+    public readonly userName: string;
+    public readonly email: string;
+    public readonly password: string;
+
+    constructor(obj: UserRecord) {
+        const {id, email, password, userName} = obj;
+        if (userName.length < 3 && userName.length > 50) {
+            throw new ValidationError(`User name must be at least 3 characters long and not longer than 50 characters. Your fighter name is ${userName.length} characters long.`)
+        }
+        if (password.length < 3 && password.length > 50) {
+            throw new ValidationError(`password must be at least 3 characters long and not longer than 50 characters. Your fighter name is ${password.length} characters long.`)
+        }
 
 
-// export class UserRecord {
-//     public id?: string;
-//     public readonly userName: string;
-//     public readonly email: string;
-//     public readonly password: string;
-//     public readonly isLoggedIn: boolean;
-//     public readonly age: number;
-//
-//     constructor(obj: UserRecord) {
-//         const {id, email, password, isLoggedIn, age, userName} = obj;
-//         if (userName.length <3 && userName >50) {
-//             throw new ValidationError(`User name must be at least 3 characters long and not longer than 50 characters. Your fighter name is ${userName.length} characters long.`)
-//         }
-//
-//
-//         this.id = id ?? uuid();
-//     }
-//
-//
-// }
+        this.id = id ?? uuid();
+        this.userName = userName;
+        this.email = emailValidation(email);
+        this.password = password;
+    }
+}
+const Gregorian = new UserRecord({
+    userName: 'Gregorian',
+    password: '12',
+    email: 'gregorian@gmail.com'
+} as UserRecord);
+
+console.log(Gregorian)
