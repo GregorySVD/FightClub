@@ -11,6 +11,7 @@ const emailValidation = (email: string): string => {
 }
 
 
+
 export class UserRecord {
     public id?: string;
     public readonly userName: string;
@@ -22,21 +23,19 @@ export class UserRecord {
         if (userName.length < 3 && userName.length > 50) {
             throw new ValidationError(`User name must be at least 3 characters long and not longer than 50 characters. Your fighter name is ${userName.length} characters long.`)
         }
-        if (password.length < 3 && password.length > 50) {
-            throw new ValidationError(`password must be at least 3 characters long and not longer than 50 characters. Your fighter name is ${password.length} characters long.`)
+        if (password.length < 8 && password.length > 50) {
+            throw new ValidationError(`password must be at least 8 characters long and not longer than 50 characters. Your fighter name is ${password.length} characters long.`)
         }
-
-
         this.id = id ?? uuid();
         this.userName = userName;
         this.email = emailValidation(email);
         this.password = password;
     }
 }
-const Gregorian = new UserRecord({
-    userName: 'Gregorian',
-    password: '12',
-    email: 'gregorian@gmail.com'
-} as UserRecord);
-
-console.log(Gregorian)
+// const Gregorian = new UserRecord({
+//     userName: 'Gregorian',
+//     password: '12',
+//     email: 'gregorian@gmail.com'
+// } as UserRecord);
+//
+// console.log(Gregorian)
