@@ -8,6 +8,9 @@ export const passwordValidation = (password: string): string => {
 
 
 // Check if the password meets the criteria
+    if (password.length < 8 || password.length > 255) {
+        throw new ValidationError(`password must be at least 8 characters long and not longer than 50 characters. Your fighter name is ${password.length} characters long.`)
+    }
     if (uppercasePattern.test(password) === false) {
         throw new ValidationError(`Your password needs to have at least one Uppercase character (A-Z).`);
     }
@@ -25,5 +28,3 @@ export const passwordValidation = (password: string): string => {
 // Return password if all criteria are met, otherwise return ValidationError
     return password;
 }
-
-console.log(passwordValidation('milo1995!'));

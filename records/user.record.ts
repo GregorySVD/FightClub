@@ -21,13 +21,11 @@ export class UserRecord {
 
     constructor(obj: UserRecord) {
         const {id, email, password, userName} = obj;
-        if (userName.length < 3 && userName.length > 50) {
+        if (userName.length < 3 || userName.length > 50) {
             throw new ValidationError(`User name must be at least 3 characters long and not longer than 50 characters. Your fighter name is ${userName.length} characters long.`)
         }
-        if (password.length < 8 && password.length > 50) {
-            throw new ValidationError(`password must be at least 8 characters long and not longer than 50 characters. Your fighter name is ${password.length} characters long.`)
-        }
-        passwordValidation(this.password); // Password validation
+
+        passwordValidation(password); // Password validation
 
         this.id = id ?? uuid();
         this.userName = userName;
@@ -36,9 +34,7 @@ export class UserRecord {
     }
 }
 // const Gregorian = new UserRecord({
-//     userName: 'Gregorian',
-//     password: '12',
+//     userName: 'mis',
+//     password: '12Asaf12a!',
 //     email: 'gregorian@gmail.com'
 // } as UserRecord);
-//
-// console.log(Gregorian)
