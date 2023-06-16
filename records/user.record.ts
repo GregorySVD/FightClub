@@ -1,5 +1,6 @@
 import {ValidationError} from "../utils/error";
 import {v4 as uuid} from "uuid";
+import {passwordValidation} from "../utils/passwordValidation";
 
 
 const emailValidation = (email: string): string => {
@@ -26,6 +27,8 @@ export class UserRecord {
         if (password.length < 8 && password.length > 50) {
             throw new ValidationError(`password must be at least 8 characters long and not longer than 50 characters. Your fighter name is ${password.length} characters long.`)
         }
+        passwordValidation(this.password); // Password validation
+
         this.id = id ?? uuid();
         this.userName = userName;
         this.email = emailValidation(email);
