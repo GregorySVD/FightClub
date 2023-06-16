@@ -1,6 +1,7 @@
 import {ValidationError} from "../utils/error";
 import {v4 as uuid} from "uuid";
 import {passwordValidation} from "../utils/passwordValidation";
+import {pool} from "../utils/db";
 
 
 const emailValidation = (email: string): string => {
@@ -31,6 +32,15 @@ export class UserRecord {
         this.userName = userName;
         this.email = emailValidation(email);
         this.password = password;
+    }
+    async insert(): Promise<string> {
+        await pool.execute("INSERT INTO `users` (`id`, `userName`, `email`, `password`) VALUES(:id, :userName," +
+            " :email, :password)", {
+            id: this.id,
+            userName: this.userName,
+            email: this.email,
+            password: this.password,
+        })
     }
 }
 // const Gregorian = new UserRecord({
