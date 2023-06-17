@@ -41,10 +41,17 @@ export class UserRecord {
             email: this.email,
             password: this.password,
         })
+        return this.id;
     }
 }
-// const Gregorian = new UserRecord({
-//     userName: 'mis',
-//     password: '12Asaf12a!',
-//     email: 'gregorian@gmail.com'
-// } as UserRecord);
+
+
+
+const userTest = new UserRecord({
+    userName: 'test2',
+    password: '12Asaf12a!',
+    email: 'gregorian2@gmail.com'
+} as UserRecord);
+
+(async () => {await userTest.insert();
+console.log(userTest)})();
