@@ -1,0 +1,20 @@
+.login-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    border: 1px solid #1f1e1e;
+    padding: 20px;
+    width: 70%;
+    align-content: center;
+    justify-content: center;
+}
+.login-input-email {
+    flex: 1 0 25%;
+
+}
+.login-input-password {
+    flex: 1 0 25%;
+}
+.btn-login-submit {
+    flex: 1 0 40px;
+}
