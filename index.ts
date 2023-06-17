@@ -9,6 +9,7 @@ import {arenaRouter} from "./routers/arena";
 import {hallOfFameRouter} from "./routers/hall-of-fame";
 import './utils/db';
 import {handleError} from "./utils/error";
+import {userRouter} from "./routers/user";
 //for instance connect to database;
 
 const app = express();
@@ -30,6 +31,7 @@ app.use('/', homeRouter);
 app.use('/warrior', warriorRouter);
 app.use('/arena', arenaRouter);
 app.use('/hall-of-fame', hallOfFameRouter);
+app.use('/user', userRouter);
 
 //Error Handler
 app.use(handleError);

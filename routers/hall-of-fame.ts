@@ -13,7 +13,6 @@ hallOfFameRouter
                 }
             }
         );
-        console.log(hallOfFameList);
 
         res.render('./hall-of-fame/list.hbs', {
             hallOfFameList
