@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    scroll-behavior: smooth!important;
+    scroll-behavior: smooth !important;
 }
 
 body {
@@ -27,12 +27,10 @@ input:focus {
     background: linear-gradient(to right, #9340ff, #ff66c4);
 }
 
-
-
 .warrior-add-form {
     max-width: 400px;
     margin: 0 auto;
-    padding: 100px;
+    padding: 20px 100px;
     border: 5px solid;
     border-radius: 20px;
     border-image: linear-gradient(to right, #9340ff, #ff66c4) 1;
@@ -74,7 +72,6 @@ input:focus {
 }
 
 
-
 .hall-of-fame-text h1 {
     margin: 8px 0 0 0;
     background: linear-gradient(to right, #9340ff, #ff66c4);
@@ -86,7 +83,81 @@ input:focus {
     margin: 16px 0 16px 0;
     font-style: italic;
 }
+
 .arena-p {
     margin: 16px 0 16px 0;
     font-style: italic;
+}
+
+.arena-view {
+    max-width: 50%;
+    margin: 20vh 25% 20vh 25%;
+}
+
+
+.arena-fighters-section {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15vh;
+}
+
+.arena-first-fighter-input, form-second-fighter {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.arena-first-fighter-input select {
+    appearance: none;
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #9340ff;
+    border-radius: 5px;
+    background-color: #1f1e1e;
+    cursor: pointer;
+    color: #fff;
+    box-shadow: -2vh 1vh 2vh 2vh #dd3050;
+}
+
+.form-second-fighter select {
+    appearance: none;
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #dd3050;
+    border-radius: 5px;
+    background-color: #1f1e1e;
+    cursor: pointer;
+    color: #fff;
+    box-shadow: 2vh 1vh 2vh 2vh #9340ff;
+}
+
+.btn-submit-fight {
+    text-align: center;
+    padding: 1vh 5vh 1vh 5vh;
+    color: inherit;
+    font-size: 1.5em;
+    font-weight: bolder;
+    background: linear-gradient(to left, #9340ff, #dd3050);
+    border-radius: 10px;
+    margin-top: 20vh;
+}
+.btn-submit-fight:hover{
+    background: linear-gradient(to right, #9340ff, #dd3050);
+    color: #aaa;
+}
+
+.arena-fighters-section h2 {
+    font-style: italic;
+    font-size: 34px;
+}
+
+.fight-log {
+    margin-top: 1vh;
+}
+.fight-log li {
+    margin-top: 1vh;
+    color: #9340ff;
+}
+.fight-log li:nth-child(even) {
+    color: #dd3050;
 }

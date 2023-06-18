@@ -3,7 +3,11 @@
     border: 2px solid red;
     border-radius: 30px;
     flex-direction: column;
-    background-color: #efebeb;
+    background-color: #7c4747;
+    transparent: 0.1s;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px 100px;
 }
 .img-error-icon {
     margin-top: 3px;

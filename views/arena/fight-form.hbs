@@ -1,13 +1,23 @@
-<h2>Welcome to the Arena!</h2>
-<p class="arena-p">Step into the mythical Arena, a realm where heroes are forged and legends are born. Behold
-    the spectacle as
-    two
-    mighty warriors wage an epic battle, defying the limits of their mortal existence. Amidst the chaos and uncertainty,
-    their unyielding spirit illuminates the path to immortality. Witness the unfolding saga of triumph and sacrifice, as
-    they strive to etch their indelible mark within The Hall of Fame.</p>
-<form action="/arena/fight" method="POST">
-    {{> warrior-select select-name="warrior1"}}
-    {{> warrior-select select-name="warrior2"}}
-    <br>
-    <button type="submit" class="btn-submit-fight">Let the battle begin</button>
-</form>
+<section class="arena-view">
+    <h2>Welcome to the Arena!</h2>
+    <p class="arena-p">Step into the mythical Arena, a realm where heroes are forged and legends are born. Behold
+        the spectacle as
+        two
+        mighty warriors wage an epic battle, defying the limits of their mortal existence. Amidst the chaos and
+        uncertainty,
+        their unyielding spirit illuminates the path to immortality. Witness the unfolding saga of triumph and
+        sacrifice, as
+        they strive to etch their indelible mark within The Hall of Fame.</p>
+    <form action="/arena/fight" method="POST">
+        <div class="arena-fighters-section">
+            <div class="arena-first-fighter-input">
+                {{> warrior-select select-name="warrior1"}}
+            </div>
+            <h2>VS</h2>
+            <div class="form-second-fighter">
+                {{> warrior-select select-name="warrior2"}}
+            </div>
+        </div>
+        <button type="submit" class="btn-submit-fight">Let the battle begin</button>
+    </form>
+</section>

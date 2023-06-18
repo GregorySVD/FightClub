@@ -50,12 +50,11 @@ header {
     font-weight: bolder;
     background: linear-gradient(#dd3050,#785aa5);
     border-radius: 10px;
-    transition: 0.8s;
 }
 
 .btn-login:hover,
 .btn-login:focus {
-    box-shadow: 0 0 0 5px #785aa5;
+    color: #aaa;
 }
 
 .login-container a {
@@ -72,7 +71,7 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    box-shadow: 0 1vh 1vh 0vh #dd3050;
+    box-shadow: 0 1vh 2vh 0vh #dd3050;
 }
 
 
